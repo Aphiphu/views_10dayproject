@@ -1,0 +1,93 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  style.
+    body {
+    font-family: Arial, Helvetica, sans-serif
+    }
+    .row {
+    display: flex;
+    }
+    .column {
+    flex: 33.33%;
+    padding: 15px 5px;
+    object-fit: scale-down;
+    }
+    .button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
+    img {
+    width: 100%;
+    height: 50%;
+    }
+    caption {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: right;
+    }
+    .content_img {
+    position: relative;
+    float: left;
+    margin-right: 10px;
+    }
+    .content_img div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    color: white;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: visibility 0s, opacity 0.5s linear;
+    transition: visibility 0s, opacity 0.5s linear;
+    }
+    .content_img:hover {
+    cursor: pointer;
+    }
+    .content_img:hover div {
+    padding: 8px 15px;
+    visibility: visible;
+    opacity: 0.7;
+    }
+h1(style='text-align:center') You have not Voted Yet. Vote Now!
+.row
+    .column
+        .content_img
+            img(src='/images/candidate1.jpg', style='height: 500px;')
+            div Goals:
+        button(type='button', onclick='confirmvote()') Vote for Abhinav Vinod
+    .column
+        .content_img
+            img(src='/images/candidate2.jpg', style='height: 500px;')
+            div Image 2 Text
+        button(type='button', onclick='confirmvote()') Vote for Josh Eirol
+    .column
+        .content_img
+            img(src='/images/candidate3.jpg', style='height: 500px;')
+            div Image 3 Text
+        button(type='button', onclick='confirmvote()') Vote for Ahmad Al Fardan
+    .column
+        .content_img
+            img(src='/images/candidate4.jpg', style='height: 500px;')
+            div Image 4 Text
+        button(type='button', onclick='confirmvote()') Vote for Muhammad Yusuf
+script.
+  function confirmvote() {
+  if (confirm("U can only vote once, are u sure about your choice?")){
+  location.replace("");
+  }
+  }
+ function redirecthome() {
+      location.replace("http://localhost:4000/login");
+      }
+button(type='button' onclick='redirecthome()') Go to home page?
